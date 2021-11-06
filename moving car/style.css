@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.sky{
+    height: 100vh;
+    width: 100%;
+
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+
+}
+.trees{
+    height: 100vh;
+    width: 100%;
+    background-image: url(trees.png);
+    background-size: cover;
+    position: absolute;
+    
+}
+.track{
+    height: 60vh;
+    /* you need to set height width of block accordingly 
+     */
+    width: 800vw;
+    background-image: url(track.png);
+   
+    position: absolute;
+    background-repeat: repeat-x;
+    top:90vh;
+    animation: cr linear 5s infinite;
+}
+.car{
+    height: 100px;
+    width: 380px;
+    /* first we will try random values in css */
+    background-image: url(car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 444px;
+    bottom: 67px;
+    animation:shake linear 3s infinite;
+
+}
+
+.wheel1 img{
+    width:77px;
+    position: relative;
+    top: 42px;
+    left: 42px;
+    animation:wheelRotation linear .6s infinite;
+
+}
+body{
+    overflow: hidden;
+    /* if things are getting  out of range then we will make oabove css comment */
+}
+
+.wheel2 img{
+    width:77px;
+    position: relative;
+    top: -39px;
+    left: 235px;
+    animation:wheelRotation linear .6s infinite;
+
+}
+@keyframes wheelRotation{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes cr{
+    100%{
+        /* instead of moving car we will move track for 
+        //our animation  type  */
+        transform: translateX(-500vh);
+    }
+}
+@keyframes shake{
+    /* we can use muliple keyframes in a single animations */
+    0%{
+        
+        transform: translateY(-5px);
+    }
+    50%{
+        
+        transform: translateY(5px);
+    }
+    100%{
+        
+        transform: translateX(-5px);
+    }
+
+}
